@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login page</title>
+<style>
+body{
+background-image:url("R.jpg");
+}
+.main{
+padding:20px 50px 20px 50px;
+background-image:url("640956.jpg");
+color:white;
+top:20%;
+left:35%;
+bottom:25%;
+position:absolute;
+}
+#login{
+color: white;
+background-color:gray;
+margin-left:50px;
+border-color: grey;
+}
+#signup
+{
+color: white;
+background-color:gray;
+margin-left:80px;
+border-color: grey;
+}
+#button{
+width:300px;
+padding:10px 75px 10px 75px;
+color:white;
+background-color:purple;
+margin-left: 10px;
+margin-right: 0px;
+border-radius:20px;
+}
+#input{
+padding:10px 10px 10px 5px;
+width:300px;
+height:15px;
+margin-left: 5px;
+margin-right: 0px;
+}
+#button:hover
+{
+color:black;
+background-color: yellow;
+}
+#login:hover
+{
+color:purple;
+}
+#signup:hover
+{
+color:purple;
+}
+img{
+position: absolute;
+margin-top: -50px;
+margin-left: 120px;
+border-radius: 60px;
+}
+</style>
+</head>
+<body>
+<form>
+<div class="main">
+<img src="wa.png"height="75"width="75">
+<br><br><button id="login"><b><font size="4">LOGIN</font></b></button><button id="signup"><b><font size="4">SIGNUP</font></b></button><br><br><br>
+<br><input type="email" id="input" placeholder="Username"><br><br>
+<input type="password" id="input" placeholder="Password"><br><br>
+<input type="checkbox" id="checkbox"><Label for="checkbox"><font size="3">Remember me</font></Label><br><br>
+<button id="button" type="button"onclick="location.href='Socialpage.html'">Login</button><br>
+<div class="forg" style="text-align:center;"><a href="Forgetpass"><font size="3">Forget password?</font></a></div>
+</div>
+</form>
+</body>
+</html>

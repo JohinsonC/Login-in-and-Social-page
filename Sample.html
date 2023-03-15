@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sample</title>
+</head>
+<body>
+<script type="text/javascript">
+  function sa(length,breadth){
+	  
+	  area=length*breadth;
+	  document.getElementById("p1").innerHTML="Area of rectangle:"+area;
+  }
+</script>
+<form>
+Enter the length :<input type="number"name="length"><br><br>
+Enter the breadth :<input type="number"name="breadth"><br><br>
+<input type= button value="Calculate area"onClick="sa(length.value,breadth.value)">
+<p id="p1" style=color:Green;></p><br>
+<a href="javascript:void(document.body.style.backgroundColor='red')">Change Background Color</a>
+</form>
+</body>
+</html>

@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SocialBook</title>
+<script src="https://kit.fontawesome.com/ae819a25c7.js" crossorigin="anonymous"></script>
+<style>
+*{
+font-family:sans-serif; 
+box-sizing: border-box;
+}
+body{
+background-color:rgb(238, 238, 238);
+}
+nav{
+display:flex;
+align-items:center;
+justify-content:space-between;
+background-color:blue;
+padding: 5px 5%;
+position: sticky;
+top:0;
+z-index:100;
+}
+.image img{
+padding: 20px 100px 5px 100px;
+border-radius:20px;
+width: 100%;
+height: 100%
+}
+.logo{
+width: 175px;
+height:45px;
+margin-right: 35px;
+}
+.nav-left{
+display:flex;
+align-items:center;
+}
+.nav-left ul li{
+list-style: none;
+display: inline;
+}
+.nav-left ul li img{
+width: 30px;
+margin: 0 10px;
+}
+.nav-right{
+display: flex;
+align-items: center;
+}
+.nav-usericon img{
+width: 40px;
+height:40px;
+border-radius: 50%;
+}
+.searchbox{
+background-color:white;
+width: 250px;
+display: flex;
+align-items: center;
+padding: 0 10px;
+margin-right: 20px;
+}
+.searchbox img{
+width:15px;
+padding-right: 15px;
+}
+.searchbox input{
+width: 100%;
+background-color: transparent;
+padding: 10px;
+outline: none;
+border:0;
+}
+.online{
+position: relative;
+}
+.online::after{
+content:'';
+width:7px;
+height:7px;
+border:2px solid white;
+border-radius: 50%;
+background-color:rgb(0, 244, 0);
+position:absolute;
+right :0;
+}
+.container{
+display:flex;
+justify-content: space-between;
+padding: 13px 0 10px 0;
+}
+.leftsidebar{
+padding:10px;
+border-radius:20px;
+background-color:rgb(192, 192, 192);
+font-size:14px;
+flex-basis: 20%;
+position: static;
+top:70px;
+align-self: flex-start;
+}
+.rightsidebar{
+background-color:rgb(192, 192, 192);
+margin:0;
+padding :20px;
+border-radius :20px;
+flex-basis: 20%;
+position: static;
+top:70px;
+align-self: flex-start;
+}
+.mainbar{
+flex-basis: 57%;
+margin-top:0px;
+} 
+.implinks{
+border-bottom:2px solid gray;
+}
+.shortcutlinks a{
+text-decoration: none;
+display:flex;
+align-items: center;
+margin-bottom: 30px;
+width:auto;
+}
+.implinks a{
+text-decoration: none;
+display:flex;
+align-items: center;
+margin-bottom: 30px;
+width:auto; 
+}
+.implinks a img,.shortcutlinks a img{
+width: 25px;
+margin-right: 15px;
+}
+.implinks a:last-child {
+	color:blue;
+} 
+.sidebartitle{
+height:30px;
+background-color:rgb(238, 238, 238);
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-bottom:10px;
+}
+.sidebartitle5{
+padding-right:10px;
+height:30px;
+background-color:rgb(238, 238, 238);
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-bottom:0px;
+}
+
+.sidebartitle a{
+margin-right:10px;
+color: blue;
+font-size: 12px;
+}
+.event{
+display: flex;
+font-size: 12px;
+margin:10px;
+}
+.leftevent{
+background-color: blue;
+border-radius: 10px;
+height : 65px;
+width : 65px;
+margin-bottom : 5px;
+margin-right : 15px;
+text-align : center;
+position : relative;
+overflow : hidden;
+box-shadow : blue;
+}
+.event p{
+font-size: 12px;
+}
+.event a{
+font-size: 12px;
+text-decoration: none;
+color: blue
+}
+.leftevent span{
+color:black;
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+background-color: white;
+font-size: 10px;
+padding: 4px 0;
+}
+.rightevent b{
+font-size: 14px;
+}
+.rightevent img{
+width:7.5px;
+height:10px;
+margin-right: 5px;
+}
+.profile{
+padding:20px 60px 0px 60px;
+margin-left:100px;
+margin-right:100px;
+background-color:white;
+display:flex;
+align-items:flex-start;
+justify-content:space-between;
+top:0;
+z-index:100;
+}
+.profile-left{
+display:flex;
+align-items:inherit;
+padding-left :0;
+padding-right :10%;
+}
+.profile-left img{
+width :120px;
+height: 150px;
+}
+.profile-left p{
+margin-top:40px;
+margin-left:-85px;
+font-size: small;
+}
+.profile-right1{
+background-color:rgb(192,192,192);
+margin-top:20px;
+margin-right:-500px;
+height:25px;
+display:flex;
+text-align:center;
+width:100px;
+}
+.profile-right2{
+background-color: blue;
+margin-top:20px;
+margin-right:-600px;
+height:25px;
+display:flex;
+text-align:inherit;
+width:100px;
+}
+.profile-right1 button{
+background-color: rgb(192, 192, 192);
+outline-style: none;
+border: none;
+}
+.profile-right2 button{
+background-color: blue;
+outline-style: none;
+border: none;
+}
+.profile-right3 button{
+margin-top: 100px;
+margin-right:-00px;
+background-color:rgb(192,192,192);
+outline-style: none;
+border: none;
+}
+.profile-right1 img{
+padding-left :0px;
+padding-top:2px;
+padding-bottom:2px;
+width :25px;
+height:25px;
+}
+.advertise img{
+width: 100%;
+height:100%;
+}
+.onlinelist{
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+}
+.online img{
+width: 40px;
+border-radius: 50%;
+}
+.onlinelist .online::after{
+top:unset;
+bottom:5px;
+}
+.onlinelist p{
+margin-left: 10px;
+}
+.Friendlist img{
+width: 65px;
+height:65px;
+}
+.storygallery{
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
+}
+.writepostcontainer{
+width: 100%;
+background: white;
+border-radius: 6px;
+padding: 20px;
+color: #626262;
+}
+.userprofile img{
+width : 45px;
+height: 45px;
+border-radius : 50%;
+margin-right: 10px;
+}
+.userprofile{
+display: flex;
+align-items: center;
+}
+.userprofile small{
+margin-bottom:20px;
+font-size: 12px;
+margin-right: 10px;
+}
+.userprofile p{
+margin-bottom: -5px;
+margin-top:0;
+font-weight: 500;
+color: #626262;
+}
+.postinputcontainer{
+padding-left:50px;
+padding-top: 20px;
+}
+.postinputcontainer textarea{
+width: 100%;
+border: 0;
+outline: 0;
+border-bottom: 1px solid gray;
+background-color: transparent;
+}
+.addpostlink{
+display: flex;
+margin-top: 10px;
+}
+.addpostlink a{
+text-decoration: none;
+display: flex;
+align-items: center;
+color: #626262;
+margin-right: 30px;
+font-size: 13px;
+}
+.addpostlink img{
+width: 20px;
+margin-right: 10px;
+}
+.postcontainer{
+width: 100%;
+background: white;
+border-radius: 6px;
+padding: 20px;
+color:#626262;
+margin: 20px 0;
+}
+.userprofile span{
+font-size: 13px;
+color: #9a9a9a;
+}
+.posttext{
+color:#9a9a9a;
+margin: 15px;
+font-size: 15px;
+}
+.posttext b{
+color :#626262;
+font-weight: 500;
+}
+.posttext a{
+color:#1876f2;
+text-decoration: none;
+}
+.postimg{
+width: 100%;
+border-radius: 4px;
+margin-bottom: 5px;
+}
+.postrow{
+display: flex;
+align-items: center;
+justify-content: space-between
+}
+.activityicons div img{
+width:15px;
+margin-right: 10px;
+}
+.activityicons div{
+display: inline-flex;
+align-items: center;
+margin-right: 30px;
+}
+.postprofileicons{
+display: flex;
+align-items: center;
+}
+.postprofileicons img{
+width: 20px;
+border-radius: 50%;
+margin-right: 5px;
+}
+</style>
+</head>
+
+
+
+
+
+
+
+<body>
+
+<nav>
+<div class="nav-left">
+<img src="logo.png"class="logo">
+<ul>
+<li><img src="notification.png"></li>
+<li><img src="inbox.png"></li>
+<li><img src="video.png"></li>
+</ul>
+</div>
+<div class="nav-right">
+<div class="searchbox">
+<img src="search.png">
+<input type="text" placeholder="Search">
+</div>
+<div class="nav-usericon online">
+<img src="profile-pic.PNG"></div>
+</div>
+</nav>
+<div class="image"><img src="cover.png"></div>
+
+<div class="profile">
+<div class="profile-left">
+<img src="profile-pic.PNG">
+<h4 style="margin-left: 20px;margin-top: 15px">JOHIN C R</h4>
+<p>120 friends  20 mutual</p>
+<img src="member-1.png"style="width: 40px;height: 40px;border-radius: 50%;margin-top: 70px;margin-left:-120px;">
+<img src="member-2.png"style="width: 40px;height: 40px;border-radius: 50%;margin-top: 70px">
+<img src="member-3.png"style="width: 40px;height: 40px;border-radius: 50%;margin-top: 70px">
+</div>
+<div class="profile-right1">
+<img src="fq.jpg">
+<button>Friends</button>
+</div>
+<div class="profile-right2">
+<img src="">
+<button>Messages</button>
+</div>
+<div class="profile-right3">
+<button><b>...</b></button>
+</div>
+</div>
+<div class="container">
+<div class="leftsidebar">
+<div class="implinks">
+<a href=""><img src=" news.png">Latest News</a>
+<a href=""><img src="friends.png">Friends</a>
+<a href=""><img src="group.png">Group</a>
+<a href=""><img src="marketplace.png">marketplace</a>
+<a href=""><img src="watch.png">Watch</a>
+<a href="">See more</a>
+</div>
+<div class="sidebartitle">
+<h4 style="font-weight: 600;font-size: 16px;margin-left: 15px">Conversation</h4>
+<a href="">Hide chat</a>
+</div>
+<div class="onlinelist">
+<div class="online">
+<img src="member-1.png">
+</div>
+<p>Lion</p>
+</div>
+<div class="onlinelist">
+<div class="online">
+<img src="member-2.png">
+</div>
+<p>Tiger</p>
+</div>
+<div class="onlinelist">
+<div class="online">
+<img src="member-3.png">
+</div>
+<p>Cheetah</p>
+</div>
+<div class="onlinelist">
+<div class="online">
+<img src="member-4.png">
+</div>
+<p>Monkey</p>
+</div>
+<div class="sidebartitle5">
+<h4 style="font-weight: 600;font-size: 16px;margin-left: 15px">Friends</h4>
+<a href="">All friends</a>
+</div>
+<div>
+<small>120 Friends(20 mutual)</small>
+</div>
+<div class="Friendlist">
+<img src="member-1.png">
+<img src="member-2.png">
+<img src="member-3.png">
+<img src="member-4.png">
+<img src="member-5.png">
+<img src="member-6.png">
+<img src="member-7.png">
+<img src="member-8.png">
+<img src="member-9.png">
+<img src="photo1.png">
+<img src="photo2.png">
+<img src="photo3.png">
+</div>
+</div>
+<div class="mainbar">
+<div class="writepostcontainer">
+<div class="userprofile">
+<img src="profile-pic.PNG">
+<div>
+<p>Johin C R</p>
+<small>Public <i class="fa-solid fa-sort-down"></i></small>
+</div>
+</div>
+<div class="postinputcontainer">
+<textarea rows="3" placeholder="What's on your mind, Johin?"></textarea>
+<div class="addpostlink">
+<a href=""><img src="live-video.png">Live Video</a>
+<a href=""><img src="photo.png">Photo/Video</a>
+<a href=""><img src="feeling.png">Feeling/Activity</a>
+</div>
+</div>
+</div>
+<div class="postcontainer">
+<div class="postrow">
+<div class="userprofile">
+<img src="profile-pic.PNG">
+<div>
+<p>Johin C R</p>
+<span>January 1 2023, 12.00 am</span>
+</div>
+</div>
+<a href=""><i class="fa-solid fa-ellipsis-vertical"></i></a>
+</div>
+
+<p class="posttext">Subscribe <b>@Johin</b> Youtube Channel to watch more videos on website development and UI designs. <a href="">#Johin</a><a href="">#YoutubeChannel</a></p>
+
+<img src="feed-image-1.png"class="postimg"></div>
+<div class="postrow">
+<div class="activityicons">
+<div><img src="like-blue.png">120</div>
+<div><img src="comments.png">45</div>
+<div><img src="share.png">20</div>
+</div>
+<div class="postprofileicons">
+<img src="profile-pic.PNG">
+</div>
+</div>
+<div class="postcontainer">
+<div class="postrow">
+<div class="userprofile">
+<img src="profile-pic.PNG">
+<div>
+<p>Johin C R</p>
+<span>January 1 2023, 12.00 am</span>
+</div>
+</div>
+<a href=""><i class="fa-solid fa-ellipsis-vertical"></i></a>
+</div>
+<p class="posttext">Subscribe <b>@Johin</b> Youtube Channel to watch more videos on website development and UI designs. <a href="">#Johin</a><a href="">#YoutubeChannel</a></p>
+
+<img src="feed-image-2.png"class="postimg"></div>
+<div class="postrow">
+<div class="activityicons">
+<div><img src="like-blue.png">120</div>
+<div><img src="comments.png">45</div>
+<div><img src="share.png">20</div>
+</div>
+<div class="postprofileicons">
+<img src="profile-pic.PNG">
+</div>
+</div>
+</div>
+<div class="rightsidebar">
+<div class="sidebartitle">
+<h4 style="font-weight: 600;font-size: 16px;margin-left: 15px">Events</h4>
+<a href="">See All</a>
+</div>
+<div class="event">
+<div class="leftevent">
+<h3 style="margin-bottom: 10px">01</h3>
+<span>March</span>
+</div>
+<div class="rightevent">
+<b>Social Media</b>
+<p><img src="location.png">Johin Tech Park</p>
+<a href="">More info</a>
+</div>
+</div>
+<div class="event">
+<div class="leftevent">
+<h3 style="margin-bottom: 10px">22</h3>
+<span>June</span>
+</div>
+<div class="rightevent">
+<b>Mobile Marketing</b>
+<p><img src="location.png">Johin Tech Park</p>
+<a href="">More info</a>
+</div>
+</div>
+<div class="sidebartitle">
+<h4 style="font-weight: 600;font-size: 16px;margin-left: 15px">Advertisement</h4>
+<a href="">Close</a>
+</div>
+<div class="advertise">
+<img src="advertisement.png">
+</div>
+<div class="shortcutlinks">
+<p style="color:Blue;margin-top: 25px;font-weight:bold;">Your shortcuts</p>
+<a href=""><img src="shortcut-1.png">Web Developers</a>
+<a href=""><img src="shortcut-2.png">Web Design Course</a>
+<a href=""><img src="shortcut-3.png">Full Stack Development</a>
+<a href=""><img src="shortcut-4.png">Website Experts</a>
+</div>
+</div>
+</div>
+</body>
+</html>

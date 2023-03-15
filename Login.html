@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login page</title>
+<style>
+body{
+background-image:url("587597.jpg");
+}
+.sub{
+padding:95px 50px 95px 50px;
+top:20%;
+left:25%;
+bottom:25%;
+position:absolute;
+color:white;
+background-color:black;
+}
+.main{
+padding:20px 50px 20px 50px;
+background-color: White;
+top:20%;
+left:50%;
+bottom:25%;
+position:absolute;
+
+}
+#button{
+width:300px;
+padding:10px 75px 10px 75px;
+color:white;
+background-color:blue;
+margin-left: 10px;
+margin-right: 0px;
+}
+#button1{
+width:250px;
+padding:10px 50px 10px 50px;
+color:white;
+background-color:blue;
+margin-left: 10px;
+margin-right: 0px;
+}
+#button2{
+width:250px;
+padding:10px 50px 10px 50px;
+color:white;
+background-color:skyblue;
+margin-left: 10px;
+margin-right: 0px;
+}
+#button3{
+width:250px;
+padding:10px 50px 10px 50px;
+color:white;
+background-color:red;
+margin-left: 10px;
+margin-right: 0px;
+}
+#input{
+padding:10px 10px 10px 5px;
+width:300px;
+height:15px;
+margin-left: 5px;
+margin-right: 0px;
+}
+#button:hover{
+color:black;
+background-color: yellow;
+}
+#button1:hover{
+color:black;
+background-color: yellow;
+}
+#button2:hover{
+color:black;
+background-color: yellow;
+}
+#button3:hover{
+color:black;
+background-color: yellow;
+}
+</style>
+</head>
+<body>
+<form>
+<div class="sub">
+<h1 align="center">TOP HTML</h1>
+<p align="center">Login using social media to get quick access</p>
+<button type="button" id="button1"onclick="location.href='signin.html'">Signin with facebook</button><br>
+<button type="button" id="button2"onclick="location.href='signin.html'">Signin with twitter</button><br>	
+<button type="button" id="button3"onclick="location.href='signin.html'">Signin with google</button>
+</div>
+<div class="main">
+<h1 align="center">Login into your account</h1>
+<h5 align="center">Don't have an account?<a href="signin.html">Sign up free!</a></h5><br>
+<input type="email" id="input" placeholder="Email"><br><br>
+<input type="password" id="input" placeholder="Password"><br><br>
+<input type="checkbox" id="checkbox"><Label for="checkbox"><small>Remember me</small></Label>
+<div style="text-align: right;"><a href="Forgetpass"><small>Forget password?</small></a><br><br></div>
+<button type="button" id="button"onclick="location.href='Socialpage.html'">Login with Email</button>
+</div>
+</form>
+</body>
+</html>
